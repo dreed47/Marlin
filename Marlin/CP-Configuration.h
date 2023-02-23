@@ -89,8 +89,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  // #define MOTHERBOARD BOARD_MIGHTYBOARD_REVE
-  #define MOTHERBOARD BOARD_MKS_GEN_L_V21
+  #define MOTHERBOARD BOARD_MIGHTYBOARD_REVE
 #endif
 
 /**
@@ -539,8 +538,8 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  *
  */
-#define TEMP_SENSOR_0 11
-#define TEMP_SENSOR_1 11
+#define TEMP_SENSOR_0 -2
+#define TEMP_SENSOR_1 -2
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
@@ -2548,14 +2547,14 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-// #define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: ENABLE CRC
  *
  * Use CRC checks and retries on the SD communication.
  */
-// #define SD_CHECK_AND_RETRY
+#define SD_CHECK_AND_RETRY
 
 /**
  * LCD Menu Items
@@ -2563,8 +2562,8 @@
  * Disable all menus and only display the Status Screen, or
  * just remove some extraneous menu items to recover space.
  */
-// #define NO_LCD_MENUS
-// #define SLIM_LCD_MENUS
+//#define NO_LCD_MENUS
+//#define SLIM_LCD_MENUS
 
 //
 // ENCODER SETTINGS
@@ -2572,13 +2571,13 @@
 // This option overrides the default number of encoder pulses needed to
 // produce one step. Should be increased for high-resolution encoders.
 //
-// #define ENCODER_PULSES_PER_STEP 4
+//#define ENCODER_PULSES_PER_STEP 4
 
 //
 // Use this option to override the number of step signals required to
 // move between next/prev menu items.
 //
-// #define ENCODER_STEPS_PER_MENU_ITEM 1
+//#define ENCODER_STEPS_PER_MENU_ITEM 1
 
 /**
  * Encoder Direction Options
@@ -2595,7 +2594,7 @@
 //
 //  Set this option if CLOCKWISE causes values to DECREASE
 //
-// #define REVERSE_ENCODER_DIRECTION
+//#define REVERSE_ENCODER_DIRECTION
 
 //
 // This option reverses the encoder direction for navigating LCD menus.
@@ -2603,7 +2602,7 @@
 //  If CLOCKWISE normally moves DOWN this makes it go UP.
 //  If CLOCKWISE normally moves UP this makes it go DOWN.
 //
-// #define REVERSE_MENU_DIRECTION
+#define REVERSE_MENU_DIRECTION
 
 //
 // This option reverses the encoder direction for Select Screen.
@@ -2611,16 +2610,16 @@
 //  If CLOCKWISE normally moves LEFT this makes it go RIGHT.
 //  If CLOCKWISE normally moves RIGHT this makes it go LEFT.
 //
-// #define REVERSE_SELECT_DIRECTION
+//#define REVERSE_SELECT_DIRECTION
 
 //
 // Encoder EMI Noise Filter
 //
 // This option increases encoder samples to filter out phantom encoder clicks caused by EMI noise.
 //
-// #define ENCODER_NOISE_FILTER
+//#define ENCODER_NOISE_FILTER
 #if ENABLED(ENCODER_NOISE_FILTER)
-#define ENCODER_SAMPLES 10
+  #define ENCODER_SAMPLES 10
 #endif
 
 //
@@ -2628,8 +2627,8 @@
 //
 // Add individual axis homing items (Home X, Home Y, and Home Z) to the LCD menu.
 //
-// #define INDIVIDUAL_AXIS_HOMING_MENU
-// #define INDIVIDUAL_AXIS_HOMING_SUBMENU
+#define INDIVIDUAL_AXIS_HOMING_MENU
+//#define INDIVIDUAL_AXIS_HOMING_SUBMENU
 
 //
 // SPEAKER/BUZZER
@@ -2637,7 +2636,7 @@
 // If you have a speaker that can produce tones, enable it here.
 // By default Marlin assumes you have a buzzer with a fixed frequency.
 //
-// #define SPEAKER
+//#define SPEAKER
 
 //
 // The duration and frequency for the UI feedback sound.
@@ -2646,8 +2645,8 @@
 // Note: Test audio output with the G-Code:
 //  M300 S<frequency Hz> P<duration ms>
 //
-// #define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
-// #define LCD_FEEDBACK_FREQUENCY_HZ 5000
+//#define LCD_FEEDBACK_FREQUENCY_DURATION_MS 2
+//#define LCD_FEEDBACK_FREQUENCY_HZ 5000
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
@@ -2661,7 +2660,7 @@
 //
 // Note: Usually sold with a white PCB.
 //
-#define REPRAP_DISCOUNT_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_SMART_CONTROLLER
 
 //
 // GT2560 (YHCB2004) LCD Display
@@ -2669,29 +2668,29 @@
 // Requires Testato, Koepel softwarewire library and
 // Andriy Golovnya's LiquidCrystal_AIP31068 library.
 //
-// #define YHCB2004
+//#define YHCB2004
 
 //
 // Original RADDS LCD Display+Encoder+SDCardReader
 // http://doku.radds.org/dokumentation/lcd-display/
 //
-// #define RADDS_DISPLAY
+//#define RADDS_DISPLAY
 
 //
 // ULTIMAKER Controller.
 //
-// #define ULTIMAKERCONTROLLER
+//#define ULTIMAKERCONTROLLER
 
 //
 // ULTIPANEL as seen on Thingiverse.
 //
-// #define ULTIPANEL
+//#define ULTIPANEL
 
 //
 // PanelOne from T3P3 (via RAMPS 1.4 AUX2/AUX3)
 // https://reprap.org/wiki/PanelOne
 //
-// #define PANEL_ONE
+//#define PANEL_ONE
 
 //
 // GADGETS3D G3D LCD/SD Controller
@@ -2699,32 +2698,32 @@
 //
 // Note: Usually sold with a blue PCB.
 //
-// #define G3D_PANEL
+//#define G3D_PANEL
 
 //
 // RigidBot Panel V1.0
 // http://www.inventapart.com/
 //
-// #define RIGIDBOT_PANEL
+//#define RIGIDBOT_PANEL
 
 //
 // Makeboard 3D Printer Parts 3D Printer Mini Display 1602 Mini Controller
 // https://www.aliexpress.com/item/32765887917.html
 //
-// #define MAKEBOARD_MINI_2_LINE_DISPLAY_1602
+//#define MAKEBOARD_MINI_2_LINE_DISPLAY_1602
 
 //
 // ANET and Tronxy 20x4 Controller
 //
-// #define ZONESTAR_LCD            // Requires ADC_KEYPAD_PIN to be assigned to an analog pin.
-// This LCD is known to be susceptible to electrical interference
-// which scrambles the display.  Pressing any button clears it up.
-// This is a LCD2004 display with 5 analog buttons.
+//#define ZONESTAR_LCD            // Requires ADC_KEYPAD_PIN to be assigned to an analog pin.
+                                  // This LCD is known to be susceptible to electrical interference
+                                  // which scrambles the display.  Pressing any button clears it up.
+                                  // This is a LCD2004 display with 5 analog buttons.
 
 //
 // Generic 16x2, 16x4, 20x2, or 20x4 character-based LCD.
 //
-// #define ULTRA_LCD
+//#define ULTRA_LCD
 
 //=============================================================================
 //======================== LCD / Controller Selection =========================
@@ -2742,7 +2741,7 @@
 // Elefu RA Board Control Panel
 // http://www.elefu.com/index.php?route=product/product&product_id=53
 //
-// #define RA_CONTROL_PANEL
+//#define RA_CONTROL_PANEL
 
 //
 // Sainsmart (YwRobot) LCD Displays
@@ -2750,13 +2749,13 @@
 // These require F.Malpartida's LiquidCrystal_I2C library
 // https://bitbucket.org/fmalpartida/new-liquidcrystal/wiki/Home
 //
-// #define LCD_SAINSMART_I2C_1602
-// #define LCD_SAINSMART_I2C_2004
+//#define LCD_SAINSMART_I2C_1602
+//#define LCD_SAINSMART_I2C_2004
 
 //
 // Generic LCM1602 LCD adapter
 //
-// #define LCM1602
+//#define LCM1602
 
 //
 // PANELOLU2 LCD with status LEDs,
@@ -2768,13 +2767,13 @@
 // Note: The PANELOLU2 encoder click input can either be directly connected to
 // a pin (if BTN_ENC defined to != -1) or read through I2C (when BTN_ENC == -1).
 //
-// #define LCD_I2C_PANELOLU2
+//#define LCD_I2C_PANELOLU2
 
 //
 // Panucatt VIKI LCD with status LEDs,
 // integrated click & L/R/U/D buttons, separate encoder inputs.
 //
-// #define LCD_I2C_VIKI
+//#define LCD_I2C_VIKI
 
 //
 // CONTROLLER TYPE: Shift register panels
@@ -2784,22 +2783,22 @@
 // 2-wire Non-latching LCD SR from https://goo.gl/aJJ4sH
 // LCD configuration: https://reprap.org/wiki/SAV_3D_LCD
 //
-// #define SAV_3DLCD
+//#define SAV_3DLCD
 
 //
 // 3-wire SR LCD with strobe using 74HC4094
 // https://github.com/mikeshub/SailfishLCD
 // Uses the code directly from Sailfish
 //
-// #define FF_INTERFACEBOARD
+#define FF_INTERFACEBOARD
 
 //
 // TFT GLCD Panel with Marlin UI
 // Panel connected to main board by SPI or I2C interface.
 // See https://github.com/Serhiy-K/TFTGLCDAdapter
 //
-// #define TFTGLCD_PANEL_SPI
-// #define TFTGLCD_PANEL_I2C
+//#define TFTGLCD_PANEL_SPI
+//#define TFTGLCD_PANEL_I2C
 
 //=============================================================================
 //=======================   LCD / Controller Selection  =======================
@@ -2819,105 +2818,105 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-// #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
 //
-// #define K3D_FULL_GRAPHIC_SMART_CONTROLLER
+//#define K3D_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // ReprapWorld Graphical LCD
 // https://reprapworld.com/electronics/3d-printer-modules/autonomous-printing/graphical-lcd-screen-v1-0/
 //
-// #define REPRAPWORLD_GRAPHICAL_LCD
+//#define REPRAPWORLD_GRAPHICAL_LCD
 
 //
 // Activate one of these if you have a Panucatt Devices
 // Viki 2.0 or mini Viki with Graphic LCD
 // https://www.panucatt.com
 //
-// #define VIKI2
-// #define miniVIKI
+//#define VIKI2
+//#define miniVIKI
 
 //
 // Alfawise Ex8 printer LCD marked as WYH L12864 COG
 //
-// #define WYH_L12864
+//#define WYH_L12864
 
 //
 // MakerLab Mini Panel with graphic
 // controller and SD support - https://reprap.org/wiki/Mini_panel
 //
-// #define MINIPANEL
+//#define MINIPANEL
 
 //
 // MaKr3d Makr-Panel with graphic controller and SD support.
 // https://reprap.org/wiki/MaKr3d_MaKrPanel
 //
-// #define MAKRPANEL
+//#define MAKRPANEL
 
 //
 // Adafruit ST7565 Full Graphic Controller.
 // https://github.com/eboston/Adafruit-ST7565-Full-Graphic-Controller/
 //
-// #define ELB_FULL_GRAPHIC_CONTROLLER
+//#define ELB_FULL_GRAPHIC_CONTROLLER
 
 //
 // BQ LCD Smart Controller shipped by
 // default with the BQ Hephestos 2 and Witbox 2.
 //
-// #define BQ_LCD_SMART_CONTROLLER
+//#define BQ_LCD_SMART_CONTROLLER
 
 //
 // Cartesio UI
 // http://mauk.cc/webshop/cartesio-shop/electronics/user-interface
 //
-// #define CARTESIO_UI
+//#define CARTESIO_UI
 
 //
 // LCD for Melzi Card with Graphical LCD
 //
-// #define LCD_FOR_MELZI
+//#define LCD_FOR_MELZI
 
 //
 // Original Ulticontroller from Ultimaker 2 printer with SSD1309 I2C display and encoder
 // https://github.com/Ultimaker/Ultimaker2/tree/master/1249_Ulticontroller_Board_(x1)
 //
-// #define ULTI_CONTROLLER
+//#define ULTI_CONTROLLER
 
 //
 // MKS MINI12864 with graphic controller and SD support
 // https://reprap.org/wiki/MKS_MINI_12864
 //
-// #define MKS_MINI_12864
+//#define MKS_MINI_12864
 
 //
 // MKS MINI12864 V3 is an alias for FYSETC_MINI_12864_2_1. Type A/B. NeoPixel RGB Backlight.
 //
-// #define MKS_MINI_12864_V3
+//#define MKS_MINI_12864_V3
 
 //
 // MKS LCD12864A/B with graphic controller and SD support. Follows MKS_MINI_12864 pinout.
 // https://www.aliexpress.com/item/33018110072.html
 //
-// #define MKS_LCD12864A
-// #define MKS_LCD12864B
+//#define MKS_LCD12864A
+//#define MKS_LCD12864B
 
 //
 // FYSETC variant of the MINI12864 graphic controller with SD support
 // https://wiki.fysetc.com/Mini12864_Panel/
 //
-// #define FYSETC_MINI_12864_X_X    // Type C/D/E/F. No tunable RGB Backlight by default
-// #define FYSETC_MINI_12864_1_2    // Type C/D/E/F. Simple RGB Backlight (always on)
-// #define FYSETC_MINI_12864_2_0    // Type A/B. Discreet RGB Backlight
-// #define FYSETC_MINI_12864_2_1    // Type A/B. NeoPixel RGB Backlight
-// #define FYSETC_GENERIC_12864_1_1 // Larger display with basic ON/OFF backlight.
+//#define FYSETC_MINI_12864_X_X    // Type C/D/E/F. No tunable RGB Backlight by default
+//#define FYSETC_MINI_12864_1_2    // Type C/D/E/F. Simple RGB Backlight (always on)
+//#define FYSETC_MINI_12864_2_0    // Type A/B. Discreet RGB Backlight
+//#define FYSETC_MINI_12864_2_1    // Type A/B. NeoPixel RGB Backlight
+//#define FYSETC_GENERIC_12864_1_1 // Larger display with basic ON/OFF backlight.
 
 //
 // BigTreeTech Mini 12864 V1.0 is an alias for FYSETC_MINI_12864_2_1. Type A/B. NeoPixel RGB Backlight.
 //
-// #define BTT_MINI_12864_V1
+//#define BTT_MINI_12864_V1
 
 //
 // Factory display for Creality CR-10
@@ -2926,12 +2925,12 @@
 // This is RAMPS-compatible using a single 10-pin connector.
 // (For CR-10 owners who want to replace the Melzi Creality board but retain the display)
 //
-// #define CR10_STOCKDISPLAY
+//#define CR10_STOCKDISPLAY
 
 //
 // Ender-2 OEM display, a variant of the MKS_MINI_12864
 //
-// #define ENDER2_STOCKDISPLAY
+//#define ENDER2_STOCKDISPLAY
 
 //
 // ANET and Tronxy Graphical Controller
@@ -2940,26 +2939,26 @@
 // A clone of the RepRapDiscount full graphics display but with
 // different pins/wiring (see pins_ANET_10.h). Enable one of these.
 //
-// #define ANET_FULL_GRAPHICS_LCD
-// #define ANET_FULL_GRAPHICS_LCD_ALT_WIRING
+//#define ANET_FULL_GRAPHICS_LCD
+//#define ANET_FULL_GRAPHICS_LCD_ALT_WIRING
 
 //
 // AZSMZ 12864 LCD with SD
 // https://www.aliexpress.com/item/32837222770.html
 //
-// #define AZSMZ_12864
+//#define AZSMZ_12864
 
 //
 // Silvergate GLCD controller
 // https://github.com/android444/Silvergate
 //
-// #define SILVER_GATE_GLCD_CONTROLLER
+//#define SILVER_GATE_GLCD_CONTROLLER
 
 //
 // eMotion Tech LCD with SD
 // https://www.reprap-france.com/produit/1234568748-ecran-graphique-128-x-64-points-2-1
 //
-// #define EMOTION_TECH_LCD
+//#define EMOTION_TECH_LCD
 
 //=============================================================================
 //==============================  OLED Displays  ==============================
@@ -2968,21 +2967,21 @@
 //
 // SSD1306 OLED full graphics generic display
 //
-// #define U8GLIB_SSD1306
+//#define U8GLIB_SSD1306
 
 //
 // SAV OLEd LCD module support using either SSD1306 or SH1106 based LCD modules
 //
-// #define SAV_3DGLCD
+//#define SAV_3DGLCD
 #if ENABLED(SAV_3DGLCD)
-#define U8GLIB_SSD1306
-// #define U8GLIB_SH1106
+  #define U8GLIB_SSD1306
+  //#define U8GLIB_SH1106
 #endif
 
 //
 // TinyBoy2 128x64 OLED / Encoder Panel
 //
-// #define OLED_PANEL_TINYBOY2
+//#define OLED_PANEL_TINYBOY2
 
 //
 // MKS OLED 1.3" 128×64 Full Graphics Controller
@@ -2990,35 +2989,35 @@
 //
 // Tiny, but very sharp OLED display
 //
-// #define MKS_12864OLED          // Uses the SH1106 controller (default)
-// #define MKS_12864OLED_SSD1306  // Uses the SSD1306 controller
+//#define MKS_12864OLED          // Uses the SH1106 controller (default)
+//#define MKS_12864OLED_SSD1306  // Uses the SSD1306 controller
 
 //
 // Zonestar OLED 128×64 Full Graphics Controller
 //
-// #define ZONESTAR_12864LCD           // Graphical (DOGM) with ST7920 controller
-// #define ZONESTAR_12864OLED          // 1.3" OLED with SH1106 controller (default)
-// #define ZONESTAR_12864OLED_SSD1306  // 0.96" OLED with SSD1306 controller
+//#define ZONESTAR_12864LCD           // Graphical (DOGM) with ST7920 controller
+//#define ZONESTAR_12864OLED          // 1.3" OLED with SH1106 controller (default)
+//#define ZONESTAR_12864OLED_SSD1306  // 0.96" OLED with SSD1306 controller
 
 //
 // Einstart S OLED SSD1306
 //
-// #define U8GLIB_SH1106_EINSTART
+//#define U8GLIB_SH1106_EINSTART
 
 //
 // Overlord OLED display/controller with i2c buzzer and LEDs
 //
-// #define OVERLORD_OLED
+//#define OVERLORD_OLED
 
 //
 // FYSETC OLED 2.42" 128×64 Full Graphics Controller with WS2812 RGB
 // Where to find : https://www.aliexpress.com/item/4000345255731.html
-// #define FYSETC_242_OLED_12864   // Uses the SSD1309 controller
+//#define FYSETC_242_OLED_12864   // Uses the SSD1309 controller
 
 //
 // K.3D SSD1309 OLED 2.42" 128×64 Full Graphics Controller
 //
-// #define K3D_242_OLED_CONTROLLER   // Software SPI
+//#define K3D_242_OLED_CONTROLLER   // Software SPI
 
 //=============================================================================
 //========================== Extensible UI Displays ===========================
@@ -3054,53 +3053,67 @@
  *  - Download https://github.com/InsanityAutomation/Marlin/raw/CrealityDwin2.0_Bleeding/TM3D_Combined480272_Landscape_V7.7z
  *  - Copy the downloaded DWIN_SET folder to the SD card.
  *
+ * CREALITY_TOUCH
+ *  - CR-6 OEM touch screen. A DWIN display with touch.
+ *
  * Flash display with DGUS Displays for Marlin:
  *  - Format the SD card to FAT32 with an allocation size of 4kb.
  *  - Download files as specified for your type of display.
  *  - Plug the microSD card into the back of the display.
  *  - Boot the display and wait for the update to complete.
  */
-// #define DGUS_LCD_UI ORIGIN
+//#define DGUS_LCD_UI ORIGIN
 #if DGUS_UI_IS(MKS)
-#define USE_MKS_GREEN_UI
+  #define USE_MKS_GREEN_UI
 #elif DGUS_UI_IS(IA_CREALITY)
-// #define LCD_SCREEN_ROTATE 90 // Portrait Mode or 800x480 displays
+  //#define LCD_SCREEN_ROTATE 90 // Portrait Mode or 800x480 displays
 #endif
+
+//
+// CR-6 OEM touch screen. A DWIN display with touch.
+//
+//#define DWIN_CREALITY_TOUCHLCD
 
 //
 // Touch-screen LCD for Malyan M200/M300 printers
 //
-// #define MALYAN_LCD
+//#define MALYAN_LCD
 
 //
 // Touch UI for FTDI EVE (FT800/FT810) displays
 // See Configuration_adv.h for all configuration options.
 //
-// #define TOUCH_UI_FTDI_EVE
+//#define TOUCH_UI_FTDI_EVE
 
 //
 // Touch-screen LCD for Anycubic printers
 //
-// #define ANYCUBIC_LCD_I3MEGA
-// #define ANYCUBIC_LCD_CHIRON
+//#define ANYCUBIC_LCD_I3MEGA
+//#define ANYCUBIC_LCD_CHIRON
 #if EITHER(ANYCUBIC_LCD_I3MEGA, ANYCUBIC_LCD_CHIRON)
-// #define ANYCUBIC_LCD_DEBUG
-// #define ANYCUBIC_LCD_GCODE_EXT  // Add ".gcode" to menu entries for DGUS clone compatibility
+  //#define ANYCUBIC_LCD_DEBUG
+  //#define ANYCUBIC_LCD_GCODE_EXT  // Add ".gcode" to menu entries for DGUS clone compatibility
 #endif
 
 //
 // 320x240 Nextion 2.8" serial TFT Resistive Touch Screen NX3224T028
 //
-// #define NEXTION_TFT
+//#define NEXTION_TFT
+
+//
+// PanelDue touch controller by Escher3D
+// http://escher3d.com/pages/order/products/product2.php
+//
+//#define PANELDUE
 
 //
 // Third-party or vendor-customized controller interfaces.
 // Sources should be installed in 'src/lcd/extui'.
 //
-// #define EXTENSIBLE_UI
+//#define EXTENSIBLE_UI
 
 #if ENABLED(EXTENSIBLE_UI)
-// #define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
+  //#define EXTUI_LOCAL_BEEPER // Enables use of local Beeper pin with external display
 #endif
 
 //=============================================================================
@@ -3116,95 +3129,95 @@
 // 480x320, 3.5", SPI Display with Rotary Encoder from MKS
 // Usually paired with MKS Robin Nano V2 & V3
 //
-// #define MKS_TS35_V2_0
+//#define MKS_TS35_V2_0
 
 //
 // 320x240, 2.4", FSMC Display From MKS
 // Usually paired with MKS Robin Nano V1.2
 //
-// #define MKS_ROBIN_TFT24
+//#define MKS_ROBIN_TFT24
 
 //
 // 320x240, 2.8", FSMC Display From MKS
 // Usually paired with MKS Robin Nano V1.2
 //
-// #define MKS_ROBIN_TFT28
+//#define MKS_ROBIN_TFT28
 
 //
 // 320x240, 3.2", FSMC Display From MKS
 // Usually paired with MKS Robin Nano V1.2
 //
-// #define MKS_ROBIN_TFT32
+//#define MKS_ROBIN_TFT32
 
 //
 // 480x320, 3.5", FSMC Display From MKS
 // Usually paired with MKS Robin Nano V1.2
 //
-// #define MKS_ROBIN_TFT35
+//#define MKS_ROBIN_TFT35
 
 //
 // 480x272, 4.3", FSMC Display From MKS
 //
-// #define MKS_ROBIN_TFT43
+//#define MKS_ROBIN_TFT43
 
 //
 // 320x240, 3.2", FSMC Display From MKS
 // Usually paired with MKS Robin
 //
-// #define MKS_ROBIN_TFT_V1_1R
+//#define MKS_ROBIN_TFT_V1_1R
 
 //
 // 480x320, 3.5", FSMC Stock Display from Tronxy
 //
-// #define TFT_TRONXY_X5SA
+//#define TFT_TRONXY_X5SA
 
 //
 // 480x320, 3.5", FSMC Stock Display from AnyCubic
 //
-// #define ANYCUBIC_TFT35
+//#define ANYCUBIC_TFT35
 
 //
 // 320x240, 2.8", FSMC Stock Display from Longer/Alfawise
 //
-// #define LONGER_LK_TFT28
+//#define LONGER_LK_TFT28
 
 //
 // 320x240, 2.8", FSMC Stock Display from ET4
 //
-// #define ANET_ET4_TFT28
+//#define ANET_ET4_TFT28
 
 //
 // 480x320, 3.5", FSMC Stock Display from ET5
 //
-// #define ANET_ET5_TFT35
+//#define ANET_ET5_TFT35
 
 //
 // 1024x600, 7", RGB Stock Display with Rotary Encoder from BIQU-BX
 //
-// #define BIQU_BX_TFT70
+//#define BIQU_BX_TFT70
 
 //
 // 480x320, 3.5", SPI Stock Display with Rotary Encoder from BIQU B1 SE Series
 //
-// #define BTT_TFT35_SPI_V1_0
+//#define BTT_TFT35_SPI_V1_0
 
 //
 // Generic TFT with detailed options
 //
-// #define TFT_GENERIC
+//#define TFT_GENERIC
 #if ENABLED(TFT_GENERIC)
-// :[ 'AUTO', 'ST7735', 'ST7789', 'ST7796', 'R61505', 'ILI9328', 'ILI9341', 'ILI9488' ]
-#define TFT_DRIVER AUTO
+  // :[ 'AUTO', 'ST7735', 'ST7789', 'ST7796', 'R61505', 'ILI9328', 'ILI9341', 'ILI9488' ]
+  #define TFT_DRIVER AUTO
 
-// Interface. Enable one of the following options:
-// #define TFT_INTERFACE_FSMC
-// #define TFT_INTERFACE_SPI
+  // Interface. Enable one of the following options:
+  //#define TFT_INTERFACE_FSMC
+  //#define TFT_INTERFACE_SPI
 
-// TFT Resolution. Enable one of the following options:
-// #define TFT_RES_320x240
-// #define TFT_RES_480x272
-// #define TFT_RES_480x320
-// #define TFT_RES_1024x600
+  // TFT Resolution. Enable one of the following options:
+  //#define TFT_RES_320x240
+  //#define TFT_RES_480x272
+  //#define TFT_RES_480x320
+  //#define TFT_RES_1024x600
 #endif
 
 /**
@@ -3217,25 +3230,25 @@
  *   For LVGL_UI also copy the 'assets' folder from the build directory to the
  *   root of your SD card, together with the compiled firmware.
  */
-// #define TFT_CLASSIC_UI
-// #define TFT_COLOR_UI
-// #define TFT_LVGL_UI
+//#define TFT_CLASSIC_UI
+//#define TFT_COLOR_UI
+//#define TFT_LVGL_UI
 
 #if ENABLED(TFT_COLOR_UI)
-/**
- * TFT Font for Color_UI. Choose one of the following:
- *
- * NOTOSANS  - Default font with antialiasing. Supports Latin Extended and non-Latin characters.
- * UNIFONT   - Lightweight font, no antialiasing. Supports Latin Extended and non-Latin characters.
- * HELVETICA - Lightweight font, no antialiasing. Supports Basic Latin (0x0020-0x007F) and Latin-1 Supplement (0x0080-0x00FF) characters only.
- */
-#define TFT_FONT NOTOSANS
+  /**
+   * TFT Font for Color_UI. Choose one of the following:
+   *
+   * NOTOSANS  - Default font with antialiasing. Supports Latin Extended and non-Latin characters.
+   * UNIFONT   - Lightweight font, no antialiasing. Supports Latin Extended and non-Latin characters.
+   * HELVETICA - Lightweight font, no antialiasing. Supports Basic Latin (0x0020-0x007F) and Latin-1 Supplement (0x0080-0x00FF) characters only.
+   */
+  #define TFT_FONT  NOTOSANS
 
-// #define TFT_SHARED_SPI   // SPI is shared between TFT display and other devices. Disable async data transfer
+  //#define TFT_SHARED_SPI   // SPI is shared between TFT display and other devices. Disable async data transfer
 #endif
 
 #if ENABLED(TFT_LVGL_UI)
-// #define MKS_WIFI_MODULE  // MKS WiFi module
+  //#define MKS_WIFI_MODULE  // MKS WiFi module
 #endif
 
 /**
@@ -3246,7 +3259,7 @@
  *   TFT_ROTATE_270, TFT_ROTATE_270_MIRROR_X, TFT_ROTATE_270_MIRROR_Y,
  *   TFT_MIRROR_X, TFT_MIRROR_Y, TFT_NO_ROTATION
  */
-// #define TFT_ROTATION TFT_NO_ROTATION
+//#define TFT_ROTATION TFT_NO_ROTATION
 
 //=============================================================================
 //============================  Other Controllers  ============================
