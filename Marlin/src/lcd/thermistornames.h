@@ -90,6 +90,8 @@
   #define THERMISTOR_NAME "RS 198-961"
 #elif THERMISTOR_ID == 11
   #define THERMISTOR_NAME "1% beta 3950"
+#elif THERMISTOR_ID == 81
+  #define THERMISTOR_NAME "custom 3950"
 #elif THERMISTOR_ID == 12
   #define THERMISTOR_NAME "E3104FXT (alt)"
 #elif THERMISTOR_ID == 13
