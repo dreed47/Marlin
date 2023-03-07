@@ -1757,14 +1757,14 @@
 // @section machine
 
 // these values are used in your slicer
-#define X_BED_SIZE 227
-#define Y_BED_SIZE 148
+#define X_BED_SIZE 211 //227
+#define Y_BED_SIZE 161 //148
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
-#define X_MIN_POS -115
+#define X_MIN_POS -115 //-69
 #define Y_MIN_POS -84
 #define Z_MIN_POS 0
-#define X_MAX_POS 152
+#define X_MAX_POS 152 //142
 #define Y_MAX_POS 77
 #define Z_MAX_POS 150
 //#define I_MIN_POS 0
