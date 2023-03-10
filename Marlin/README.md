@@ -55,9 +55,13 @@ M18 ; disable stepper
 
 ## PID Process
 
-M503
+#define DEFAULT_Kp 24.53
+#define DEFAULT_Ki 1.57
+#define DEFAULT_Kd 95.95
+
 m106 s255
-M301 p34.84 i1.52 d199.05
+m303 E0 S205 C10
+M301 p24.53 i1.57 d95.95
 M500
 
 m303 E-1 S60 C5
