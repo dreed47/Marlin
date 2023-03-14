@@ -715,7 +715,7 @@
 /**
  * M355 Case Light on-off / brightness
  */
-#define CASE_LIGHT_ENABLE
+//#define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
   #define CASE_LIGHT_PIN 39                   // Override the default pin if needed
   #define INVERT_CASE_LIGHT false             // Set true if Case Light is ON when pin is LOW
@@ -1485,8 +1485,8 @@
     #endif
     #if ENABLED(NEO2_COLOR_PRESETS)
       #define NEO2_USER_PRESET_RED        255 // User defined RED value
-      #define NEO2_USER_PRESET_GREEN      128 // User defined GREEN value
-      #define NEO2_USER_PRESET_BLUE         0 // User defined BLUE value
+      #define NEO2_USER_PRESET_GREEN      255 // User defined GREEN value
+      #define NEO2_USER_PRESET_BLUE       255 // User defined BLUE value
       #define NEO2_USER_PRESET_WHITE      255 // User defined WHITE value
       #define NEO2_USER_PRESET_BRIGHTNESS 255 // User defined intensity
       //#define NEO2_USER_PRESET_STARTUP      // Have the printer display the user preset color on startup for the second strip

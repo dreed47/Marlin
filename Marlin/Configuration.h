@@ -139,7 +139,7 @@
 
 // Name displayed in the LCD "Ready" message and Info menu
 #define CUSTOM_MACHINE_NAME "CreatorPro Redux"
-#define NUMBER_TOOLS_FROM_0
+//#define NUMBER_TOOLS_FROM_0
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -2820,7 +2820,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-// #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
@@ -2891,12 +2891,14 @@
 // MKS MINI12864 with graphic controller and SD support
 // https://reprap.org/wiki/MKS_MINI_12864
 //
-// #define MKS_MINI_12864
+//#define MKS_MINI_12864
 
 //
 // MKS MINI12864 V3 is an alias for FYSETC_MINI_12864_2_1. Type A/B. NeoPixel RGB Backlight.
 //
-#define MKS_MINI_12864_V3
+//#define MKS_MINI_12864_V3
+//#define FYSETC_MINI_12864_2_0
+#define FYSETC_MINI_12864_2_1
 
 //
 // MKS LCD12864A/B with graphic controller and SD support. Follows MKS_MINI_12864 pinout.
@@ -3394,24 +3396,25 @@
 
 // Support for Adafruit NeoPixel LED driver
 #define NEOPIXEL_LED
+
 #if ENABLED(NEOPIXEL_LED)
-  #define NEOPIXEL_TYPE          NEO_RGB // NEO_GRBW // NEO_GRBW, NEO_RGBW, NEO_GRB, NEO_RBG, etc.
+  #define NEOPIXEL_TYPE          NEO_RGB //NEO_RBG // NEO_GRBW, NEO_RGBW, NEO_GRB, NEO_RBG, etc.
                                           // See https://github.com/adafruit/Adafruit_NeoPixel/blob/master/Adafruit_NeoPixel.h
-  //#define NEOPIXEL_PIN                4 // LED driving pin
-  #define NEOPIXEL2_TYPE  NEO_GRB
-  #define NEOPIXEL2_PIN               5
-  #define NEOPIXEL_PIXELS              30 // Number of LEDs in the strip. (Longest strip when NEOPIXEL2_SEPARATE is disabled.)
-  #define NEOPIXEL_IS_SEQUENTIAL          // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
-  #define NEOPIXEL_BRIGHTNESS         127 // Initial brightness (0-255)
-  //#define NEOPIXEL_STARTUP_TEST         // Cycle through colors at startup
+  //#define NEOPIXEL_PIN                43 // LED driving pin
+  #define NEOPIXEL2_TYPE  NEO_RBG
+  #define NEOPIXEL2_PIN 43
+  #define NEOPIXEL_PIXELS 15      // Number of LEDs in the strip. (Longest strip when NEOPIXEL2_SEPARATE is disabled.)
+  //#define NEOPIXEL_IS_SEQUENTIAL  // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
+  //#define NEOPIXEL_BRIGHTNESS 255 // Initial brightness (0-255)
+  #define NEOPIXEL_STARTUP_TEST   // Cycle through colors at startup
 
   // Support for second Adafruit NeoPixel LED driver controlled with M150 S1 ...
-  #define NEOPIXEL2_SEPARATE
+  //#define NEOPIXEL2_SEPARATE
   #if ENABLED(NEOPIXEL2_SEPARATE)
-    #define NEOPIXEL2_PIXELS           15 // Number of LEDs in the second strip
-    #define NEOPIXEL2_BRIGHTNESS      127 // Initial brightness (0-255)
-    #define NEOPIXEL2_STARTUP_TEST        // Cycle through colors at startup
-    #define NEOPIXEL_M150_DEFAULT      -1 // Default strip for M150 without 'S'. Use -1 to set all by default.
+    #define NEOPIXEL2_PIXELS 15      // Number of LEDs in the second strip
+    #define NEOPIXEL2_BRIGHTNESS 255 // Initial brightness (0-255)
+    #define NEOPIXEL2_STARTUP_TEST   // Cycle through colors at startup
+    #define NEOPIXEL_M150_DEFAULT 1 // Default strip for M150 without 'S'. Use -1 to set all by default.
   #else
     //#define NEOPIXEL2_INSERIES          // Default behavior is NeoPixel 2 in parallel
   #endif
@@ -3419,8 +3422,8 @@
   // Use some of the NeoPixel LEDs for static (background) lighting
   //#define NEOPIXEL_BKGD_INDEX_FIRST   0 // Index of the first background LED
   //#define NEOPIXEL_BKGD_INDEX_LAST    5 // Index of the last background LED
-  //#define NEOPIXEL_BKGD_COLOR         { 255, 255, 255, 0 }  // R, G, B, W
-  //#define NEOPIXEL_BKGD_TIMEOUT_COLOR {  25,  25,  25, 0 }  // R, G, B, W
+  //#define NEOPIXEL_BKGD_COLOR         { 0, 255, 0, 0 }  // R, G, B, W
+  //#define NEOPIXEL_BKGD_TIMEOUT_COLOR {  0, 255, 0, 0 }  // R, G, B, W
   //#define NEOPIXEL_BKGD_ALWAYS_ON       // Keep the backlight on when other NeoPixels are off
 #endif
 
@@ -3439,20 +3442,6 @@
   #define PRINTER_EVENT_LEDS
 #endif
 
-/**
- * Printer Event LEDs
- *
- * During printing, the LEDs will reflect the printer status:
- *
- *  - Gradually change from blue to violet as the heated bed gets to target temp
- *  - Gradually change from violet to red as the hotend gets to temperature
- *  - Change to white to illuminate work surface
- *  - Change to green once print has finished
- *  - Turn off after the print has finished and the user has pushed a button
- */
-#if ANY(BLINKM, RGB_LED, RGBW_LED, PCA9632, PCA9533, NEOPIXEL_LED)
-  #define PRINTER_EVENT_LEDS
-#endif
 
 // @section servos
 
