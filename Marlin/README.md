@@ -36,16 +36,16 @@ Use this repository to build the firmware for this printer. Make sure you're in 
 
 ## PID Process Hot End
 
-#define DEFAULT_Kp 22.99
-#define DEFAULT_Ki 1.57
-#define DEFAULT_Kd 84.30
+Recv: #define DEFAULT_Kp 36.49
+Recv: #define DEFAULT_Ki 2.58
+Recv: #define DEFAULT_Kd 129.30
 
 m106 s255
-m303 E0 S225 C7
-M301 p22.99 i1.57 d84.30
+m303 E0 S220 C7
+M301 p36.49 i2.58 d129.30
 M500
 
-## Alternate MPC Process Hot End Only
+## Alternate MPC Process Hot End Only (not good results so far)
 
 M306 T
 
