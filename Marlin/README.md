@@ -1,70 +1,61 @@
-# NOTE ON FLASHING THE FIRMWARE:
+# Creator Pro Redux:
 
-The firmware for the Atmel chip used for USB on the Mighty Board is the same as the Arduino Mega's, but it doesn't do an automatic reset. If you want the printer to reset on DTR you will need to flash it with the firmware for the Arduino Mega.
+This README page documents the rebuild/repair of a Flashforge Creator Pro with a bad motherboard
 
-### Use with all nozzle settings
+- Replacement motherboard is a [Makerbase MKS GEN L V2.1](https://github.com/makerbase-mks/MKS-GEN_L/wiki/MKS_GEN_L_V2)
+- Replaced 24v power supply with a new 12v power supply
+- Replaced hot end thermocouple with a new heater block, heater and thermistor
+- Replaced stock rectangular heated bed with a generic square magnetic heated bed
+  - Fabricated a new aluminum base for the bed including bed adjustors and springs
+- All 3 24v fans were replaced with 12v fans
+  - motherboard fan is hardwired into the power supply so its on all the time
+  - parts fan is controlled with the G-code of the print file
+  - extruder fan comes on when the nozzle exceeds 30C
+- Replacement LCD display is a [Makebase MKS MINI12864](https://www.amazon.com/your-orders/orders?_encoding=UTF8&startIndex=20&ref_=ppx_yo2ov_dt_b_pagination_4_3)
+- 24V LED RGB lights were replaced with [12V LED RGB lights from TH3D](https://www.th3dstudio.com/product/ezneo220-rgb-printer-lighting-strip/)
+
+## Building Firmware
+
+Use this repository to build the firmware for this printer. Make sure you're in the creator.pro.redux.current branch before you compile and deploy the code.
+
+### Slicer Settings
 
 - Build plate shape: Rectangular
 - Origin at center
 - Heated bed
-- G-code flavor: Marlin
+- G-code flavor: Marlin 2
+- Number of Extruders: 1
+- X (Bed Width) 211
+- Y (Bed Depth) 161
+- Z (Bed Heigth) 150
+- Nozzle size: 0.4
+- Compatible material diameter: 1.75
+- Nozzle offset X: 70
+- Nozzle offset Y: 70
+- Cooling Fan Number: 1
 
-## Left Nozzle
+## PID Process Hot End
 
-Number of Extruders: 1
-
-- X (Width) 211
-- Y (Depth) 161
-- Z (Heigth) 150
-
-Extruder 1 -
-Nozzle size: 0.4
-Compatible material diameter: 1.75
-Nozzle offset X: -34
-Nozzle offset Y: 0
-Cooling Fan Number:0
-
-```gcode
-;START G-CODE;
-M104 S{material_print_temperature}
-M140 S{material_bed_temperature}
-G28
-T1
-G1 X-110 Y-70 Z30 F4800 ; move to wait position left hand side of the table
-M104 S{material_print_temperature}
-M190 S{material_bed_temperature}
-M109 S{material_print_temperature}
-G92 E0
-G1 Z0.4 F1800
-G1 E10 F300 ; purge nozzle
-G1 X-67 Y-70 E25 F300 ; purge nozzle
-G1 X-67 Y-70 Z0.15 F1200 ; slow wipe
-G1 X-67 Y-70 Z0.5 F1200 ; lift
-G92 E0
-;START G-CODE;
-
-;END G-CODE;
-G1 X150 Y75 Z150 F1000 ; send Z axis to bottom of machine
-M140 S0; cool down HBP
-M104 T0 S0 ; cool down right extruder
-M104 T1 S0 ; cool down left extruder
-M127 ; stop blower fan
-M18 ; disable stepper
-;END G-CODE;
-```
-
-## PID Process
-
-#define DEFAULT_Kp 24.53
+#define DEFAULT_Kp 22.99
 #define DEFAULT_Ki 1.57
-#define DEFAULT_Kd 95.95
+#define DEFAULT_Kd 84.30
 
 m106 s255
-m303 E0 S205 C10
-M301 p24.53 i1.57 d95.95
+m303 E0 S225 C7
+M301 p22.99 i1.57 d84.30
 M500
 
+## Alternate MPC Process Hot End Only
+
+M306 T
+
+## PID Process Bed
+
+#define DEFAULT_bedKp 134.53
+#define DEFAULT_bedKi 15.49
+#define DEFAULT_bedKd 778.81
+
 m303 E-1 S60 C5
-M304 p126.48 i15.14 d704.52
+M304 p134.53 i15.49 d778.81
 M500
 M503

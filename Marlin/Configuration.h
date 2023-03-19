@@ -540,7 +540,7 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  *
  */
-#define TEMP_SENSOR_0 1
+#define TEMP_SENSOR_0 5
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
@@ -652,8 +652,8 @@
 
 // Enable PIDTEMP for PID control or MPCTEMP for Predictive Model.
 // temperature control. Disable both for bang-bang heating.
-#define PIDTEMP          // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
-//#define MPCTEMP        // ** EXPERIMENTAL **
+//#define PIDTEMP          // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
+#define MPCTEMP        // ** EXPERIMENTAL **
 
 #define BANG_MAX 255     // Limits current to nozzle while in bang-bang mode; 255=full current
 #define PID_MAX BANG_MAX // Limits current to nozzle while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
@@ -671,9 +671,9 @@
     #define DEFAULT_Ki_LIST {   1.22,   1.22 }
     #define DEFAULT_Kd_LIST {  82.05,  82.05 }
   #else
-    #define DEFAULT_Kp 43.55
-    #define DEFAULT_Ki 8.57
-    #define DEFAULT_Kd 55.29
+    #define DEFAULT_Kp 22.99
+    #define DEFAULT_Ki 1.57
+    #define DEFAULT_Kd 84.30
 #endif
 #endif
 
@@ -756,9 +756,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 126.48 //10.00
-  #define DEFAULT_bedKi 15.14 //.023
-  #define DEFAULT_bedKd 704.52 //305.4
+  #define DEFAULT_bedKp 134.53
+  #define DEFAULT_bedKi 15.49
+  #define DEFAULT_bedKd 778.81
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
