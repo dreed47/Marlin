@@ -27,7 +27,7 @@ Use this repository to build the firmware for this printer. Make sure you're in 
 - Number of Extruders: 1
 - X (Bed Width) 211
 - Y (Bed Depth) 161
-- Z (Bed Heigth) 150
+- Z (Bed Height) 150
 - Nozzle size: 0.4
 - Compatible material diameter: 1.75
 - Nozzle offset X: 70
