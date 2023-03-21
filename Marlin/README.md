@@ -40,22 +40,32 @@ Recv: #define DEFAULT_Kp 31.68
 Recv: #define DEFAULT_Ki 2.42
 Recv: #define DEFAULT_Kd 103.81
 
-m106 s255
+```M106 S255
 m303 E0 S220 C7
 M301 p31.68 i2.42 d103.81
 M500
-
+```
 ## Alternate MPC Process Hot End Only (not good results so far)
 
-M306 T
+```M306 T```
 
 ## PID Process Bed
 
-#define DEFAULT_bedKp 134.53
+```#define DEFAULT_bedKp 134.53
 #define DEFAULT_bedKi 15.49
 #define DEFAULT_bedKd 778.81
 
-m303 E-1 S60 C5
+M303 E-1 S60 C5
 M304 p134.53 i15.49 d778.81
 M500
 M503
+```
+## Finished Pics
+
+![Finished](creatorpro-redux-resources/images/creatorpro-finished.png "Finished")
+
+![Wiring](creatorpro-redux-resources/images/creatorpro-wiring-1.png "Wiring")
+
+![Wiring](creatorpro-redux-resources/images/creatorpro-wiring-2.png "Wiring")
+
+![Schematic](creatorpro-redux-resources/images/schematic.png "Schematic")
