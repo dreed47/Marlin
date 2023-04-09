@@ -45,7 +45,7 @@ m303 E0 S220 C7
 M301 p31.68 i2.42 d103.81
 M500
 ```
-## Alternate MPC Process Hot End Only (not good results so far)
+## Alternate MPC Process Hot End Only (not really good results so far)
 
 ```M306 T```
 
