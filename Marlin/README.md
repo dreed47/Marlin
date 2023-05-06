@@ -41,8 +41,9 @@ Recv: #define DEFAULT_Ki 2.42
 Recv: #define DEFAULT_Kd 103.81
 
 ```M106 S255
-m303 E0 S220 C7
-M301 p31.68 i2.42 d103.81
+m303 E0 S230 C7
+OLD - M301 p31.68 i2.42 d103.81
+LATEST - M301 p28.27 i2.26 d88.57
 M500
 ```
 ## Alternate MPC Process Hot End Only (not really good results so far)
